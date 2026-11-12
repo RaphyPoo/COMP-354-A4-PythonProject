@@ -26,3 +26,25 @@ def test_if_statement():
         conclusion = 'Number bigger than or equal to one'
 
     assert conclusion == 'Number bigger than or equal to one'
+    
+def test_multiple_elif_branches():
+    """Classify scores using multiple elif branches."""
+
+    for score, expected in [
+        (90, 'Excellent'),
+        (89, 'Good'),
+        (70, 'Good'),
+        (69, 'Pass'),
+        (50, 'Pass'),
+        (49, 'Fail'),
+    ]:
+        if score >= 90:
+            result = 'Excellent'
+        elif score >= 70:
+            result = 'Good'
+        elif score >= 50:
+            result = 'Pass'
+        else:
+            result = 'Fail'
+
+        assert result == expected
