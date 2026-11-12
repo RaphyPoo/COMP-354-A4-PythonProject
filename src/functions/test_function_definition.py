@@ -124,7 +124,6 @@ def test_function_definition():
 
 
     # Functions without an explicit return expression return None.
-
     def log_message(message):
         # No return statement at the end of the function body.
         x = message
@@ -132,7 +131,6 @@ def test_function_definition():
     assert log_message('Testing') is None
 
     # Functions can return multiple values packed as a tuple.
-
     def calculate_bounds(numbers):
         return min(numbers), max(numbers)
 
@@ -143,3 +141,10 @@ def test_function_definition():
     # Input validation and edge cases for the Fibonacci function.
     assert fibonacci_function_example(0) == []
     assert fibonacci_function_example(1) == [0]
+def add_numbers(a, b):
+    """Returns the sum of two numbers."""
+    return a + b
+
+def test_add_numbers():
+    assert add_numbers(2, 3) == 5
+    assert add_numbers(-1, 1) == 0
