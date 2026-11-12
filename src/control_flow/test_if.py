@@ -48,3 +48,21 @@ def test_multiple_elif_branches():
             result = 'Fail'
 
         assert result == expected
+def test_nested_conditions():
+    """Check entry permission using nested conditions."""
+
+    for age, has_ticket, expected in [
+        (18, True, 'Entry allowed'),
+        (18, False, 'Ticket required'),
+        (17, True, 'Too young'),
+        (17, False, 'Too young'),
+    ]:
+        if age >= 18:
+            if has_ticket:
+                result = 'Entry allowed'
+            else:
+                result = 'Ticket required'
+        else:
+            result = 'Too young'
+
+        assert result == expected
