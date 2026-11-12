@@ -141,10 +141,10 @@ def test_function_definition():
     # Input validation and edge cases for the Fibonacci function.
     assert fibonacci_function_example(0) == []
     assert fibonacci_function_example(1) == [0]
-def add_numbers(a, b):
-    """Returns the sum of two numbers."""
-    return a + b
+    def add_numbers(a, b):
+         """Returns the sum of two numbers."""
+         return a + b
 
-def test_add_numbers():
-    assert add_numbers(2, 3) == 5
-    assert add_numbers(-1, 1) == 0
+    def test_add_numbers():
+        assert add_numbers(2, 3) == 5
+        assert add_numbers(-1, 1) == 0
