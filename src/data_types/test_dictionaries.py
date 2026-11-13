@@ -77,3 +77,27 @@ def test_dictionary():
     assert dictionary_for_string_keys['sape'] == 4139
     assert dictionary_for_string_keys['guido'] == 4127
     assert dictionary_for_string_keys['jack'] == 4098
+
+
+def test_dictionary_update_multiple_entries():
+    """Test updating and adding dictionary entries using update()."""
+
+    student_grades = {
+        'math': 80,
+        'english': 85,
+    }
+
+    # Update an existing grade and add a new subject.
+    student_grades.update({
+        'math': 90,
+        'science': 95,
+    })
+
+    # Verify that the existing grade was updated.
+    assert student_grades['math'] == 90
+
+    # Verify that the new subject was added.
+    assert student_grades['science'] == 95
+
+    # Verify that the unchanged grade is preserved.
+    assert student_grades['english'] == 85
