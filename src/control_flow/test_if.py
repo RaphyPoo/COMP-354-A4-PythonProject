@@ -13,7 +13,7 @@ in other languages.
 def test_if_statement():
     """IF statement"""
 
-    number = 15
+    number = 21
     conclusion = ''
 
     if number < 0:
