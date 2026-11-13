@@ -101,3 +101,30 @@ def test_dictionary_update_multiple_entries():
 
     # Verify that the unchanged grade is preserved.
     assert student_grades['english'] == 85
+
+def test_dictionary_get_and_pop_entries():
+    """Test retrieving and removing dictionary entries."""
+
+    inventory = {
+        'notebooks': 12,
+        'pens': 20,
+        'erasers': 5,
+    }
+
+    # Retrieve the quantity of an existing item.
+    assert inventory.get('notebooks') == 12
+
+    # Return a default value when the item does not exist.
+    assert inventory.get('markers', 0) == 0
+
+    # Remove an item and save its quantity.
+    removed_quantity = inventory.pop('erasers')
+
+    # Verify that the removed value is correct.
+    assert removed_quantity == 5
+
+    # Verify that the item is no longer in the dictionary.
+    assert 'erasers' not in inventory
+
+    # Verify that other entries remain unchanged.
+    assert inventory['pens'] == 20
