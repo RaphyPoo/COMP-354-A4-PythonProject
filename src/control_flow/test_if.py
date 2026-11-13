@@ -11,21 +11,21 @@ in other languages.
 
 
 def test_if_statement():
-    """IF statement"""
+    """Check conditional behavior for both students' input values."""
 
-    number = 21
-    conclusion = ''
+    for number in [21, 34]:
+        conclusion = ''
 
-    if number < 0:
-        conclusion = 'Number is less than zero'
-    elif number == 0:
-        conclusion = 'Number equals to zero'
-    elif number < 1:
-        conclusion = 'Number is greater than zero but less than one'
-    else:
-        conclusion = 'Number bigger than or equal to one'
+        if number < 0:
+            conclusion = 'Number is less than zero'
+        elif number == 0:
+            conclusion = 'Number equals to zero'
+        elif number < 1:
+            conclusion = 'Number is greater than zero but less than one'
+        else:
+            conclusion = 'Number bigger than or equal to one'
 
-    assert conclusion == 'Number bigger than or equal to one'
+        assert conclusion == 'Number bigger than or equal to one'
     
 def test_multiple_elif_branches():
     """Classify scores using multiple elif branches."""
