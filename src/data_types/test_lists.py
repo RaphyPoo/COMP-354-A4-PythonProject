@@ -170,6 +170,16 @@ def test_list_methods():
     assert fruits == []
 
 
+def test_list_sorting():
+    """Sort a list without changing the original."""
+
+    numbers = [42, 7, 19, 31]
+
+    assert sorted(numbers) == [7, 19, 31, 42]
+    assert sorted(numbers, reverse=True) == [42, 31, 19, 7]
+    assert numbers == [42, 7, 19, 31]
+
+
 def test_del_statement():
     """The del statement
 
