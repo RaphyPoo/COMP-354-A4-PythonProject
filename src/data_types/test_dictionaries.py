@@ -78,11 +78,53 @@ def test_dictionary():
     assert dictionary_for_string_keys['guido'] == 4127
     assert dictionary_for_string_keys['jack'] == 4098
 
-#Hey this is going to make a conflict
+
 def test_dictionary_update_multiple_entries():
-    """Test updating multiple student grades using update(). Should make merge error"""
+    """Test updating and adding dictionary entries using update()."""
 
     student_grades = {
-        'math': 90,
-        'english': 95,
+        'math': 80,
+        'english': 85,
     }
+
+    # Update an existing grade and add a new subject.
+    student_grades.update({
+        'math': 90,
+        'science': 95,
+    })
+
+    # Verify that the existing grade was updated.
+    assert student_grades['math'] == 90
+
+    # Verify that the new subject was added.
+    assert student_grades['science'] == 95
+
+    # Verify that the unchanged grade is preserved.
+    assert student_grades['english'] == 85
+
+def test_dictionary_get_and_pop_entries():
+    """Test retrieving and removing dictionary entries."""
+
+    inventory = {
+        'notebooks': 12,
+        'pens': 20,
+        'erasers': 5,
+    }
+
+    # Retrieve the quantity of an existing item.
+    assert inventory.get('notebooks') == 12
+
+    # Return a default value when the item does not exist.
+    assert inventory.get('markers', 0) == 0
+
+    # Remove an item and save its quantity.
+    removed_quantity = inventory.pop('erasers')
+
+    # Verify that the removed value is correct.
+    assert removed_quantity == 5
+
+    # Verify that the item is no longer in the dictionary.
+    assert 'erasers' not in inventory
+
+    # Verify that other entries remain unchanged.
+    assert inventory['pens'] == 20
