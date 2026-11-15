@@ -286,6 +286,16 @@ def test_list_comprehensions():
     assert flatten_vector == [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
+def test_list_comprehension_filtering():
+    """Filter and transform list elements with a comprehension."""
+
+    numbers = [1, 2, 3, 4, 5, 6]
+    even_squares = [number ** 2 for number in numbers if number % 2 == 0]
+
+    assert even_squares == [4, 16, 36]
+    assert numbers == [1, 2, 3, 4, 5, 6]
+
+
 def test_nested_list_comprehensions():
     """Nested List Comprehensions
 
