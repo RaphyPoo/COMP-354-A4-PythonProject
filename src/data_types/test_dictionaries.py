@@ -77,3 +77,12 @@ def test_dictionary():
     assert dictionary_for_string_keys['sape'] == 4139
     assert dictionary_for_string_keys['guido'] == 4127
     assert dictionary_for_string_keys['jack'] == 4098
+
+#Hey this is going to make a conflict
+def test_dictionary_update_multiple_entries():
+    """Test updating multiple student grades using update(). Should make merge error"""
+
+    student_grades = {
+        'math': 90,
+        'english': 95,
+    }
