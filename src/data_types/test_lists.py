@@ -170,6 +170,16 @@ def test_list_methods():
     assert fruits == []
 
 
+def test_list_sorting():
+    """Sort a list without changing the original."""
+
+    numbers = [42, 7, 19, 31]
+
+    assert sorted(numbers) == [7, 19, 31, 42]
+    assert sorted(numbers, reverse=True) == [42, 31, 19, 7]
+    assert numbers == [42, 7, 19, 31]
+
+
 def test_del_statement():
     """The del statement
 
@@ -274,6 +284,16 @@ def test_list_comprehensions():
     vector = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
     flatten_vector = [num for elem in vector for num in elem]
     assert flatten_vector == [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+def test_list_comprehension_filtering():
+    """Filter and transform list elements with a comprehension."""
+
+    numbers = [1, 2, 3, 4, 5, 6]
+    even_squares = [number ** 2 for number in numbers if number % 2 == 0]
+
+    assert even_squares == [4, 16, 36]
+    assert numbers == [1, 2, 3, 4, 5, 6]
 
 
 def test_nested_list_comprehensions():
